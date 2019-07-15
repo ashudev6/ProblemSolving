@@ -2,18 +2,18 @@ package linkedlist;
 
 public class MyLinkedList {
 
-//    public class Node {
+//    public class ListNode {
 //        int val;
-//        Node next;
+//        ListNode next;
 //
-//        Node(int val, Node next) {
+//        ListNode(int val, ListNode next) {
 //            this.val = val;
 //            this.next = next;
 //        }
 //
 //    }
 
-    public static Node head = null;
+    public static ListNode head = null;
     public static int size = 0;
 
 
@@ -22,7 +22,7 @@ public class MyLinkedList {
         size = 0;
     }
 
-    public  static Node getHead() {
+    public  static ListNode getHead() {
         return head;
     }
 
@@ -33,7 +33,7 @@ public class MyLinkedList {
     public static int get(int index) {
         if (head == null || index<0 ||index > size) return -1;
         else {
-            Node temp = head;
+            ListNode temp = head;
             while (temp!=null && index >0){
                 temp = temp.next;
                 index--;
@@ -50,14 +50,14 @@ public class MyLinkedList {
      * Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
      */
     public void addAtHead(int val) {
-        //MyLinkedList node = new MyLinkedList(val);
-        Node node = new Node(val, null);
+        //MyLinkedList listNode = new MyLinkedList(val);
+        ListNode listNode = new ListNode(val, null);
         if (head == null) {
-            head = node;
+            head = listNode;
             size++;
         } else {
-            node.next = head;
-            head = node;
+            listNode.next = head;
+            head = listNode;
             size++;
         }
 
@@ -68,16 +68,16 @@ public class MyLinkedList {
      * Append a node of value val to the last element of the linked list.
      */
     public void addAtTail(int val) {
-        Node node = new Node(val, null);
+        ListNode listNode = new ListNode(val, null);
         if (head == null) {
-            head = node;
+            head = listNode;
             size++;
         } else {
-            Node temp = head;
+            ListNode temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
-            temp.next = node;
+            temp.next = listNode;
             size++;
 
         }
@@ -95,15 +95,15 @@ public class MyLinkedList {
 //            addAtTail(val);
 //        }
         else if (index > 0){
-            Node node = new Node(val, null);
-            Node temp = head;
+            ListNode listNode = new ListNode(val, null);
+            ListNode temp = head;
             while (temp != null && index > 1) {
                 temp = temp.next;
                 index--;
             }
             if (temp != null) {
-                node.next = temp.next;
-                temp.next = node;
+                listNode.next = temp.next;
+                temp.next = listNode;
                 size++;
             }
 
@@ -120,7 +120,7 @@ public class MyLinkedList {
         if (index == 0 && head!=null) {
             head = head.next;
         } else {
-            Node temp = head;
+            ListNode temp = head;
             while (temp!=null && index>1) {
                 temp = temp.next;
                 index--;
@@ -139,7 +139,15 @@ public class MyLinkedList {
     }
 
     void printList() {
-        Node temp = head;
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.println(temp.val);
+            temp = temp.next;
+        }
+    }
+
+    void printList(ListNode headGiven) {
+        ListNode temp = headGiven;
         while (temp != null) {
             System.out.println(temp.val);
             temp = temp.next;

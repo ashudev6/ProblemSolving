@@ -1,15 +1,15 @@
 package linkedlist;
 
-public class Node {
+public class ListNode {
 
     int val;
-    Node next;
+    ListNode next;
 
-    Node () {
+    ListNode() {
 
     }
 
-    Node(int val, Node next) {
+    ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
