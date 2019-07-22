@@ -11,7 +11,15 @@ public class ValidString {
         //String s = "([)]";
         //String  s= "{[]}";
         //String s= "(])";
-        System.out.println(isValidString(s));
+        //System.out.println(isValidString(s));
+//        StringBuffer sb1 = new
+//                StringBuffer("Welcome to Geeksforgeeks");
+//        sb1.append('I');
+//        System.out.println(sb1);
+//        StringBuffer sb2 = new StringBuffer(String.valueOf('I'));
+//        sb1 = new StringBuffer(String.valueOf('I')).append(sb1);
+//        //sb1 = sb2.append(sb1);
+//        System.out.println(sb1);
 
     }
 
